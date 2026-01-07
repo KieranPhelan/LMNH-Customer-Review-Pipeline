@@ -1,32 +1,18 @@
-# Setup what cloud we're using
 provider "aws" {
   region = var.AWS_REGION
   access_key = var.AWS_KEY
   secret_key = var.AWS_SECRET
 }
 
-# refer to existing resources
-
-# data "type of resource" "local name of resource that already exists"
 data "aws_vpc" "c21-vpc" {
     id = var.VPC_ID
 }
 
-# Describe resources
-
-# # resource "type of resource" "local name of resource"
-# resource "aws_s3_bucket" "example_bucket" {
-#     bucket = "c21-kieran-example-bucket" # Name of bucket
-#     force_destroy = true
-# }
-
-# Security Group
 resource "aws_security_group" "sg-db" {
     name = "c21-kieran-sg-museum"
     vpc_id = data.aws_vpc.c21-vpc.id
 }
 
-# Inbound access rule
 resource "aws_vpc_security_group_ingress_rule" "sg-db-inbound-postgres" {
     security_group_id = aws_security_group.sg-db.id
     cidr_ipv4 = "0.0.0.0/0"
@@ -35,7 +21,6 @@ resource "aws_vpc_security_group_ingress_rule" "sg-db-inbound-postgres" {
     ip_protocol = "tcp"
 }
 
-# Database
 resource "aws_db_instance" "db-museum" {
     allocated_storage            = 10
     db_name                      = "postgres"
