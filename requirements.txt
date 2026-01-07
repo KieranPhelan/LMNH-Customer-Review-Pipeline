@@ -1,0 +1,6 @@
+pylint
+pytest
+python-dotenv
+psycopg2-binary
+ipykernel
+confluent-kafka
