@@ -1,0 +1,9 @@
+data/
+clean_data/
+.terraform
+.venv
+*.terraform.*
+*.tfstate
+*.tfvars
+*.backup
+*.pem
