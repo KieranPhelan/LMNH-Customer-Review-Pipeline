@@ -1,0 +1,5 @@
+2026-02-06 09:44:41,798 - INFO - ────────────────────────────────────────────────────────────────────────────────────────────────────
+2026-02-06 09:44:41,798 - INFO - Pipeline started with arguments: Namespace(load=True, local_db=True, load_review=True, load_incident=True)
+2026-02-06 09:44:41,798 - INFO - Getting consumer from .env details
+2026-02-06 09:44:41,836 - INFO - Receiving messages from 'lmnh' topic
+2026-02-06 09:44:41,837 - INFO - Starting feed loop...

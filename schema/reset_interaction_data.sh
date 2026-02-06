@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source .env
+source ../.env
 
 PGPASSWORD="$DATABASE_PASSWORD" psql \
     -h "$DATABASE_IP" \
