@@ -2,10 +2,13 @@
 
 Real-time ETL pipeline for processing visitor interactions (reviews and incidents) from the Liverpool Natural History Museum.
 
+## LMNH Presentation Drive Link
+[LMNH Presentation](https://drive.google.com/drive/folders/1_K_yYGl9TYV92TLCzJ0R-a25mfN5xwhf?usp=sharing)
+
 ## Architecture
 
 **Single-stage pipeline system:**
-- **Kafka Consumer**: Continuously reads messages from `"lmnh"` topic → validates and transforms → loads to PostgreSQL (local or AWS RDS)
+- **Kafka Consumer**: Continuously reads messages from `"lmnh"` topic → validates and transforms → loads to PostgreSQL (local or AWS RDS) → visualized on Tableau Dashboard
 
 ## Quick Start
 
@@ -140,6 +143,13 @@ Invalid messages are logged but never persisted to database.
 - **Safe SQL**: Parameterised queries prevent injection attacks
 - **Comprehensive logging**: File-based logs for debugging message flow
 - **Infrastructure as Code**: Fully reproducible AWS setup with Terraform
+
+## Data Visualisation
+
+The validated visitor interaction data is automatically visualised in a **Tableau Dashboard** that displays:
+- Real-time review ratings and incident reports by exhibition
+- Historical trends in visitor satisfaction
+- Incident frequency and types
 
 ## Useful Commands
 
