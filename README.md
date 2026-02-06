@@ -53,7 +53,7 @@ DATABASE_IP=your-rds-endpoint.eu-west-2.rds.amazonaws.com
 DATABASE_PORT=5432
 ```
 
-### 3. Initialize Database Schema
+### 3. Initialise Database Schema
 
 ```bash
 cd schema
